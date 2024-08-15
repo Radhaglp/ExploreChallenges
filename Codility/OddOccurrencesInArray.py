@@ -39,3 +39,17 @@ def solution(A):
     for num, freq in count_ele.items():
         if freq % 2 != 0:
             return num
+
+#without inbuilt functions
+def solution(A):
+    if len(A) < 0:
+        return 0
+    count_dict = {}
+    for num in A:
+        if num in count_dict:
+            count_dict[num] += 1
+        else:
+            count_dict[num] = 1
+    for key, value in count_dict.items():
+        if value % 2 != 0:
+            return key
